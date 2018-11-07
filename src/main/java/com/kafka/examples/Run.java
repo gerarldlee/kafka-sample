@@ -1,6 +1,7 @@
 package com.kafka.examples;
 
 import com.google.common.io.Resources;
+import org.apache.kafka.common.serialization.Serdes;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,6 +34,14 @@ public class Run {
                 }
 
                 Consumer.main(properties, argv);
+                break;
+            case "stream":
+
+                try (InputStream props = Resources.getResource("consumer.properties").openStream()) {
+                    properties.load(props);
+                }
+
+                Stream.main(properties);
                 break;
             default:
                 throw new IllegalArgumentException("Don't know how to do " + argv[0]);
