@@ -1,4 +1,4 @@
-# Sample Programs for Kafka 0.9 API
+# Sample Programs for Kafka 2 API
 
 This project provides a simple but realistic example of a Kafka
 producer and consumer. These programs are written in a style and a
@@ -16,10 +16,10 @@ and various aspects of starting and restarting.
 To start, you need to get Kafka up and running and create some topics.
 
 ### Step 1: Download Kafka
-Download the 0.9.0.0 release and un-tar it.
+Download the 2.0.0 release and un-tar it.
 ```
-$ tar -xzf kafka_2.11-0.9.0.0.tgz
-$ cd kafka_2.11-0.9.0.0
+$ tar -xzf kafka_2.11-2.0.0.tgz
+$ cd kafka_2.11-2.0.0
 ```
 ### Step 2: Start the server
 Start a ZooKeeper server. Kafka has a single node Zookeeper configuration built-in.
@@ -47,7 +47,7 @@ the process and kill it explicitly using `kill`.
 We need two topics for the example program
 ```
 $ bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic fast-messages
-$ bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic summary-markers
+$ bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic summary-messages
 ```
 These can be listed
 ```
@@ -201,4 +201,8 @@ $
 ## Credits
 Note that this example was derived in part from the documentation provided by the Apache Kafka project. We have 
 added short, realistic sample programs that illustrate how real programs are written using Kafka.  
+
+### Resources
+* https://kafka.apache.org/quickstart
+* 
 
